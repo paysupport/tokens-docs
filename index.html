@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tokens | 管理逆向Token的平台</title>
+    <meta name="description" content="管理逆向Token的平台">
+    <meta name="generator" content="VitePress v1.6.3">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b7285'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3ET%3C/text%3E%3C/svg%3E">
+    <style>
+      :root{--vp-c-brand:#0b7285;--vp-c-text-1:#213547;--vp-c-text-2:#5c6b77;--vp-c-bg:#fff;--vp-c-bg-alt:#f6f6f7;--vp-c-divider:#e2e2e3}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--vp-c-text-1);background:var(--vp-c-bg);-webkit-font-smoothing:antialiased}
+      a{color:var(--vp-c-brand);text-decoration:none}
+      a:hover{text-decoration:underline}
+      .VPNav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--vp-c-divider)}
+      .VPNav .container{max-width:1152px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:24px}
+      .VPNav .title{font-weight:700;font-size:16px;color:var(--vp-c-text-1);display:flex;align-items:center;gap:8px}
+      .VPNav .logo{width:24px;height:24px;border-radius:6px;background:var(--vp-c-brand);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+      .VPNav .links{margin-left:auto;display:flex;gap:22px;font-size:14px}
+      .VPNav .links a{color:var(--vp-c-text-2)}
+      .Layout{max-width:1152px;margin:0 auto;padding:0 24px;display:flex;gap:48px}
+      .VPSidebar{width:220px;flex:none;padding:32px 0;font-size:14px}
+      .VPSidebar .group{margin-bottom:24px}
+      .VPSidebar .group h3{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--vp-c-text-2);margin:0 0 8px;font-weight:600}
+      .VPSidebar a{display:block;padding:4px 0;color:var(--vp-c-text-2)}
+      .VPSidebar a.active{color:var(--vp-c-brand);font-weight:600}
+      .VPContent{flex:1;min-width:0;padding:40px 0 80px}
+      h1{font-size:30px;line-height:1.25;margin:0 0 8px}
+      .lead{color:var(--vp-c-text-2);font-size:16px;margin:0 0 28px}
+      h2{font-size:20px;margin:36px 0 12px;padding-top:8px;border-top:1px solid var(--vp-c-divider)}
+      p,li{font-size:15px;line-height:1.75;color:var(--vp-c-text-1)}
+      code{background:var(--vp-c-bg-alt);border-radius:4px;padding:2px 5px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+      pre{background:var(--vp-c-bg-alt);border-radius:8px;padding:16px 18px;overflow:auto;font-size:13px;line-height:1.6}
+      pre code{background:none;padding:0}
+      table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+      th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--vp-c-divider)}
+      th{color:var(--vp-c-text-2);font-weight:600;font-size:13px}
+      .tip{border-left:4px solid var(--vp-c-brand);background:var(--vp-c-bg-alt);padding:12px 16px;border-radius:0 8px 8px 0;margin:20px 0;font-size:14px}
+      .VPFooter{border-top:1px solid var(--vp-c-divider);padding:24px;text-align:center;color:var(--vp-c-text-2);font-size:13px}
+      @media(max-width:760px){.VPSidebar{display:none}.Layout{padding:0 18px}.VPNav .links{display:none}}
+    </style>
+  </head>
+  <body>
+    <header class="VPNav">
+      <div class="container">
+        <a class="title" href="/"><span class="logo">T</span>Tokens</a>
+        <nav class="links">
+          <a href="/">指南</a>
+          <a href="/#api">API</a>
+          <a href="https://tokens-pool.top/">控制台</a>
+        </nav>
+      </div>
+    </header>
+    <div class="Layout">
+      <aside class="VPSidebar">
+        <div class="group">
+          <h3>介绍</h3>
+          <a class="active" href="/">什么是 Tokens</a>
+          <a href="/#quickstart">快速开始</a>
+        </div>
+        <div class="group">
+          <h3>使用</h3>
+          <a href="/#token">Token 管理</a>
+          <a href="/#quota">额度与计费</a>
+          <a href="/#api">API 调用</a>
+        </div>
+        <div class="group">
+          <h3>参考</h3>
+          <a href="/#faq">常见问题</a>
+        </div>
+      </aside>
+      <main class="VPContent">
+        <h1>Tokens</h1>
+        <p class="lead">管理逆向 Token 的平台 — 一个控制台，管理你的所有模型访问凭证。</p>
+
+        <p>Tokens 将多个上游模型的访问统一到一组 API Key 之下。你只需要在控制台创建一个 Token，即可用同一套接口调用不同的模型；额度、速率与日志都在一处查看。</p>
+
+        <h2 id="quickstart">快速开始</h2>
+        <p>登录 <a href="https://tokens-pool.top/">控制台</a>，在「令牌」页面创建一个新的 Token，然后把它放进请求头：</p>
+        <pre><code>curl https://api.cometapi.com/v1/models \
+  -H "Authorization: Bearer $TOKEN"</code></pre>
+        <div class="tip">Token 只在创建时显示一次，请立即保存。丢失后可以重新生成，旧 Token 会同时失效。</div>
+
+        <h2 id="token">Token 管理</h2>
+        <table>
+          <thead><tr><th>字段</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>名称</td><td>用于区分不同项目，例如 <code>prod-web</code></td></tr>
+            <tr><td>额度</td><td>该 Token 可使用的最大额度，留空表示跟随账户</td></tr>
+            <tr><td>过期时间</td><td>到期后自动失效，可随时续期</td></tr>
+            <tr><td>模型范围</td><td>限制该 Token 可调用的模型</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="quota">额度与计费</h2>
+        <p>每次调用按输入与输出 token 计费，账单在控制台的「日志」中逐条可查。额度不足时接口返回 <code>403</code>，充值后立即恢复。</p>
+
+        <h2 id="api">API 调用</h2>
+        <p>接口与 OpenAI 兼容，只需替换 <code>base_url</code>：</p>
+        <pre><code>from openai import OpenAI
+
+client = OpenAI(
+    api_key="sk-...",
+    base_url="https://api.cometapi.com/v1",
+)
+print(client.models.list())</code></pre>
+
+        <h2 id="faq">常见问题</h2>
+        <p><strong>Token 与账户密码有什么区别？</strong> Token 只用于接口调用，不能登录控制台；泄露后请在控制台吊销。</p>
+        <p><strong>可以在多个项目中共用一个 Token 吗？</strong> 可以，但建议按项目拆分，便于统计与吊销。</p>
+      </main>
+    </div>
+    <footer class="VPFooter">Tokens · 管理逆向Token的平台</footer>
+  </body>
+</html>
